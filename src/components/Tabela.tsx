@@ -10,18 +10,18 @@ export default function Tabela(props: any) {
     function renderizarCabecalho() {
         return (
             <tr>
-                <th>Código</th>
-                <th>Nome</th>
-                <th>Idade</th>
+                <th className="text-left p-4">Código</th>
+                <th className="text-left p-4">Nome</th>
+                <th className="text-left p-4">Idade</th>
             </tr>
         )
 
     }
 
-    function renderizarDados(){
+    function renderizarDados() {
         return props.clientes?.map((cliente: { id: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; nome: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; idade: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }, id: any) => {
             return (
-                <tr key ={cliente.id}>
+                <tr key={cliente.id}>
                     <td>{cliente.id}</td>
                     <td>{cliente.nome}</td>
                     <td>{cliente.idade}</td>
@@ -33,7 +33,7 @@ export default function Tabela(props: any) {
     return (
         <table>
             <thead>
-            {renderizarCabecalho()}
+                {renderizarCabecalho()}
             </thead>
             <tbody>
                 {renderizarDados()}
